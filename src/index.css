@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* The one orchestrated moment: the name settles into place on load. */
+@keyframes name-settle {
+  from { letter-spacing: 0.35em; opacity: 0; }
+  to   { letter-spacing: 0.1em;  opacity: 1; }
+}
+.name-reveal { letter-spacing: 0.1em; animation: name-settle 1.6s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .name-reveal { animation: none; }
+  html { scroll-behavior: auto; }
+}
